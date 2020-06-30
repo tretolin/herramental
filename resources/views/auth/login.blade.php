@@ -33,7 +33,7 @@
                                 </span>
                             @enderror
 
-                            <button type="submit" class="w-100 btn btn-primary text-uppercase btn-center">{{ __('Iniciar sesión') }}</button>
+                            <button type="submit" class="w-100 btn btn-primary size-20 text-uppercase btn-center">{{ __('Iniciar sesión') }}</button>
                 <div>
                     </form>
                 </div>

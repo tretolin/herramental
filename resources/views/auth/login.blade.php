@@ -24,7 +24,7 @@
                                 </span>
                             @enderror
 
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" value="asdfasdf"
+                        <input id="password" type="password" class="form-control mb-4 @error('password') is-invalid @enderror" value="asdfasdf"
                             placeholder="Contraseña" name="password" required autocomplete="current-password">
 
                             @error('password')
@@ -32,12 +32,12 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+
+                            <button type="submit" class="w-100 btn btn-primary text-uppercase btn-center">{{ __('Iniciar sesión') }}</button>
+                <div>
                     </form>
                 </div>
-                <div class="modal-footer border-0">
-                    <button type="submit" class="w-100 btn btn-primary text-uppercase">{{ __('Iniciar sesión') }}</button>
-                </div>
-                <div>
+
                     <a href="{{ route('password.request') }}"
                     class="size-24 w-100 btn-link text-white text-center d-block pt-3 pb-3">{{ __('Olvidé mi contraseña') }}a</a>
                 </div>

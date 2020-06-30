@@ -10928,3 +10928,68 @@ a.text-dark:focus {
   }
 }
 
+.modal-bg-dark {
+  background-image: url("http://www.hdfondos.org/file/26071/1920x1200/crop/plant-factory-background.jpg");
+  background-size: left center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+}
+
+:root {
+  --primary: #00702c;
+  --secondary: #6c757d;
+}
+
+.modal-dark {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.modal-dark h5 {
+  font-size: 32px;
+}
+
+.modal-dark.modal-content {
+  border-radius: 20px !important;
+  margin: 0px auto;
+  width: 400px;
+  padding: 0 45px;
+}
+
+.btn {
+  border-radius: 6px !important;
+}
+
+.btn.btn-primary {
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #00702c !important;
+}
+
+.btn.btn-primary:not([disabled]):not(.disabled):active {
+  background-color: #000a04 !important;
+}
+
+form input.form-control {
+  padding: 28px 20px;
+  font-size: 17px;
+}
+
+form .btn-center {
+  margin: 0px auto;
+}
+
+a {
+  color: #00702c;
+}
+
+a:hover {
+  color: #000a04;
+}
+
+.size-24 {
+  font-size: 24px;
+}
+

@@ -52,12 +52,12 @@
                             @endif
                         @else
                             <!-- <li class="nav-item dropdown"> -->
-                                <a href="#">
+                                <a class="link-green" href="#">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> -->
-                                    <a href="{{ route('logout') }}"
+                                    <a class="link-green" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                                         <i class="ml-4 icon material-icons">exit_to_app</i>

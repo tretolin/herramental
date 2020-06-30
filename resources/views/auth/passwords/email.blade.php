@@ -28,7 +28,7 @@
                     </form>
                 </div>
                 <div class="modal-footer border-0">
-                    <button type="submit" class="w-100 btn btn-primary text-uppercase">{{ __('Envíar link') }}</button>
+                    <button type="submit" class="w-100 btn btn-primary size-20 text-uppercase">{{ __('Envíar link') }}</button>
                 </div>
                 <div>
                     <a href="{{ route('home') }}"

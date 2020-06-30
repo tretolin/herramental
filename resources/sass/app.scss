@@ -18,6 +18,9 @@
 
 $primary: #00702c;
 $primary-dark: darken( #00702c, 20%);
+$secondary: #34569e;
+$orange: #ff8373;
+$yellow: #ffda83;
 
 :root {
     // --blue: #3490dc;
@@ -34,7 +37,7 @@ $primary-dark: darken( #00702c, 20%);
     // --gray: #6c757d;
     // --gray-dark: #343a40;
     --primary: #00702c;
-    --secondary: #6c757d;
+    --secondary: #34569e;
     // --success: #38c172;
     // --info: #6cb2eb;
     // --warning: #ffed4a;
@@ -63,13 +66,24 @@ $primary-dark: darken( #00702c, 20%);
     }
 }
 
+.block-content {
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 5px 12px -4px rgba(191,191,191,1);
+    -moz-box-shadow: 0px 5px 12px -4px rgba(191,191,191,1);
+    box-shadow: 0px 5px 12px -4px rgba(191,191,191,1);
+}
+
+.text-blue {
+    color: $secondary;
+}
+
 .btn {
     border-radius: 6px !important;
 }
 
 .btn.btn-primary {
     font-family: Arial;
-    font-size: 20px;
     font-weight: bold;
     
     background-color: $primary !important;
@@ -77,6 +91,18 @@ $primary-dark: darken( #00702c, 20%);
         background-color: $primary-dark !important;;
     }
 }
+
+.circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.border-green { border-color: $primary }
+.border-blue { border-color: $secondary }
+.border-orange { border-color: $orange }
+.border-yellow { border-color: $yellow }
 
 form {
     input.form-control {
@@ -88,13 +114,47 @@ form {
     }
 }
 
-a {
+a.link-green {
     color: $primary;
     &:hover {
         color: $primary-dark;
     }
 }
 
+a.link-blue {
+    color: $secondary;
+    &:hover {
+        color: $secondary;
+    }
+}
+
+a.link-dark {
+    color: black;
+    &:hover {
+        color: $black;
+    }
+}
+
+.size-14 {
+    font-size: 16px;
+}
+
+.size-16 {
+    font-size: 16px;
+}
+
+.size-18 {
+    font-size: 18px;
+}
+
 .size-24 {
     font-size: 24px;
+}
+
+// Template elements
+.ad-h {
+    height: 140px
+}
+.ad-vertical {
+    height: 500px;
 }

@@ -25,7 +25,8 @@ export function doughnut () {
                     //         beginAtZero: true
                     //     }
                     // }]
-                }
+                },
+                events: ['hover']
             }
         });
     }

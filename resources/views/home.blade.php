@@ -49,7 +49,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="tooltip-el tooltip-frame d-none"></div>
+                        <div class="tooltip-el tooltip-frame d-none d-md-none"></div>
                         <div class="block-content text-blue size-18 line-height-20">
                             3 máquinas en renta
                         </div>

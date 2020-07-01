@@ -11,4 +11,14 @@ const app = new Vue({
 
 $(document).ready(function () {
     chart.doughnut();
+    
+    $('.chart').click(function () {
+        if($('.tooltip-el').eq(0).hasClass('d-block')) {
+            $('.tooltip-el').removeClass('d-block')
+            $('.tooltip-el').addClass('d-none')
+        } else {
+            $('.tooltip-el').addClass('d-block')
+            $('.tooltip-el').removeClass('d-none')
+        }
+    });
 })

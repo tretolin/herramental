@@ -3,6 +3,8 @@
 
 // Variables
 @import 'variables';
+@import 'select-material';
+
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -17,7 +19,7 @@
 }
 
 $primary: #00702c;
-$primary-dark: darken( #00702c, 20%);
+$primary-dark: darken( $primary, 4%);
 $secondary: #34569e;
 $orange: #ff8373;
 $yellow: #ffda83;
@@ -88,7 +90,7 @@ $yellow: #ffda83;
     
     background-color: $primary !important;
     &:not([disabled]):not(.disabled):active {
-        background-color: $primary-dark !important;;
+        background-color: $primary-dark !important;
     }
 }
 
@@ -151,6 +153,10 @@ a.link-dark {
     font-size: 24px;
 }
 
+.line-height-20 {
+    line-height: 20px;
+}
+
 // Template elements
 .ad-h {
     height: 140px
@@ -158,3 +164,64 @@ a.link-dark {
 .ad-vertical {
     height: 500px;
 }
+
+canvas.chart {
+    cursor: pointer;
+}
+
+.float-tooltip {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+}
+
+.tooltip-el {
+    transition: all .3s ease;
+}
+
+// .h-tooltip {
+//     // position: absolute;
+//     width: 100%;
+//     overflow: auto;
+//     z-index: 100;
+//     background-color: white;
+//     bottom: -60px;
+// }
+
+.tooltip-frame {
+    margin: auto;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color:white;
+    display: block;
+    transform: rotate(45deg);
+    z-index: 150;
+    bottom: 15px;
+}
+
+// .tooltip-wrap {
+//     width: 100%;
+//     margin: 0px auto;
+//     min-width: 240px;
+//     max-width: 430px;
+// }
+
+
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) { }
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) { 
+    canvas.chart {
+        height: 250px !important;
+        width: 250px !important;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {  }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {  }

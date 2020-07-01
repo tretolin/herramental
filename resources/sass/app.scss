@@ -3,6 +3,225 @@
 
 // Variables
 @import 'variables';
+@import 'select-material';
+
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.modal-bg-dark {
+    background-image: url('http://www.hdfondos.org/file/26071/1920x1200/crop/plant-factory-background.jpg');
+    background-size: left center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .15;
+}
+
+$primary: #00702c;
+$primary-dark: darken( $primary, 4%);
+$secondary: #34569e;
+$orange: #ff8373;
+$yellow: #ffda83;
+
+:root {
+    // --blue: #3490dc;
+    // --indigo: #6574cd;
+    // --purple: #9561e2;
+    // --pink: #f66d9b;
+    // --red: #e3342f;
+    // --orange: #f6993f;
+    // --yellow: #ffed4a;
+    // --green: #38c172;
+    // --teal: #4dc0b5;
+    // --cyan: #6cb2eb;
+    // --white: #fff;
+    // --gray: #6c757d;
+    // --gray-dark: #343a40;
+    --primary: #00702c;
+    --secondary: #34569e;
+    // --success: #38c172;
+    // --info: #6cb2eb;
+    // --warning: #ffed4a;
+    // --danger: #e3342f;
+    // --light: #f8f9fa;
+    // --dark: #343a40;
+    // --breakpoint-xs: 0;
+    // --breakpoint-sm: 576px;
+    // --breakpoint-md: 768px;
+    // --breakpoint-lg: 992px;
+    // --breakpoint-xl: 1200px;
+    // --font-family-sans-serif: "Nunito", sans-serif;
+    // --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+.modal-dark {
+    background-color: rgba(0,0,0,.45);
+    h5 {
+        font-size:32px;
+    }
+    &.modal-content {
+        border-radius: 20px !important;
+        margin: 0px auto;
+        width: 400px;
+        padding: 0 45px;
+    }
+}
+
+.block-content {
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 5px 12px -4px rgba(191,191,191,1);
+    -moz-box-shadow: 0px 5px 12px -4px rgba(191,191,191,1);
+    box-shadow: 0px 5px 12px -4px rgba(191,191,191,1);
+}
+
+.text-blue {
+    color: $secondary;
+}
+
+.btn {
+    border-radius: 6px !important;
+}
+
+.btn.btn-primary {
+    font-family: Arial;
+    font-weight: bold;
+    
+    background-color: $primary !important;
+    &:not([disabled]):not(.disabled):active {
+        background-color: $primary-dark !important;
+    }
+}
+
+.circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.border-green { border-color: $primary }
+.border-blue { border-color: $secondary }
+.border-orange { border-color: $orange }
+.border-yellow { border-color: $yellow }
+
+form {
+    input.form-control {
+        padding: 28px 20px;
+        font-size: 17px;
+    }
+    .btn-center {
+        margin: 0px auto;
+    }
+}
+
+a.link-green {
+    color: $primary;
+    &:hover {
+        color: $primary-dark;
+    }
+}
+
+a.link-blue {
+    color: $secondary;
+    &:hover {
+        color: $secondary;
+    }
+}
+
+a.link-dark {
+    color: black;
+    &:hover {
+        color: $black;
+    }
+}
+
+.size-14 {
+    font-size: 16px;
+}
+
+.size-16 {
+    font-size: 16px;
+}
+
+.size-18 {
+    font-size: 18px;
+}
+
+.size-24 {
+    font-size: 24px;
+}
+
+.line-height-20 {
+    line-height: 20px;
+}
+
+// Template elements
+.ad-h {
+    height: 140px
+}
+.ad-vertical {
+    height: 500px;
+}
+
+canvas.chart {
+    cursor: pointer;
+}
+
+.float-tooltip {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+}
+
+.tooltip-el {
+    transition: all .3s ease;
+}
+
+// .h-tooltip {
+//     // position: absolute;
+//     width: 100%;
+//     overflow: auto;
+//     z-index: 100;
+//     background-color: white;
+//     bottom: -60px;
+// }
+
+.tooltip-frame {
+    margin: auto;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color:white;
+    display: block;
+    transform: rotate(45deg);
+    z-index: 150;
+    bottom: 15px;
+}
+
+// .tooltip-wrap {
+//     width: 100%;
+//     margin: 0px auto;
+//     min-width: 240px;
+//     max-width: 430px;
+// }
+
+
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) { }
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) { 
+    canvas.chart {
+        height: 250px !important;
+        width: 250px !important;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {  }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {  }

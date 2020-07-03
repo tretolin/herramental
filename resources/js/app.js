@@ -55,7 +55,7 @@ $(document).ready(function () {
         var resize = setInterval(function () {
             $(window).resize();
             if (rest-- < 1) {
-                clearInterval(reset);
+                clearInterval(resize);
             }
         }, 100);
     });

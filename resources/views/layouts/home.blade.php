@@ -74,5 +74,17 @@
                 @yield('content')
             </main>
         </div>
+        <style lang="css">
+            body .modal-container {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .modal-dialog {
+                margin:0;
+            }
+        </style>
     </body>
 </html>

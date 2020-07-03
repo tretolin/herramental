@@ -25,7 +25,6 @@ $(document).ready(function () {
 
     $('.rent-item').click(function () {
         $(window).resize();
-        console.log($('.detail-charge').eq(0).css('display'))
         if($('.detail-charge').eq(0).css('display') == 'none') {
             $('.detail-charge').fadeIn();
         } else {

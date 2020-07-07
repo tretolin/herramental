@@ -97,9 +97,10 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "doughnut", function() { return doughnut; });
 function doughnut() {
-  var ctx = document.getElementById('chart').getContext('2d');
+  var el = document.getElementById('chart');
 
-  if (ctx) {
+  if (el) {
+    var ctx = el.getContext('2d');
     var chart = new Chart(ctx, {
       type: 'doughnut',
       data: {
@@ -119,7 +120,32 @@ function doughnut() {
           //         beginAtZero: true
           //     }
           // }]
-        }
+        },
+        events: ['hover']
+      }
+    }); // Texto interior
+
+    Chart.pluginService.register({
+      beforeDraw: function beforeDraw(chart) {
+        var width = chart.chart.width,
+            height = chart.chart.height,
+            ctx = chart.chart.ctx;
+        ctx.restore();
+        var fontSize = (height / 184).toFixed(2);
+        ctx.font = fontSize + "em sans-serif";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = '#34569e';
+        var text = "$1,605.00",
+            textX = Math.round((width - ctx.measureText(text).width) / 2),
+            textY = height / 2;
+        ctx.fillText(text, textX, textY);
+        var fontSize = (height / 224).toFixed(2);
+        ctx.font = fontSize + "em sans-serif";
+        var text = "Total",
+            textX = Math.round((width - ctx.measureText(text).width) / 2),
+            textY = height / 1.7;
+        ctx.fillText(text, textX, textY);
+        ctx.save();
       }
     });
   }

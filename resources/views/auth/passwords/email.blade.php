@@ -3,7 +3,7 @@
 @section('content')
 
 <div style="background-color: black">
-    <div class="modal-bg-dark"></div>
+    <div class="modal-bg-dark" style="background-image:url('{{ asset('images/rt-bg.jpg') }}')"></div>
     <div class="row justify-content-center">
         <!-- Modal -->
         <div class="modal show d-block" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -14,8 +14,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
+                    <form id="recovery-form">
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                             placeholder="Correo" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
@@ -24,12 +23,10 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-
+                            <button type="submit" class="w-100 btn btn-primary size-20 text-uppercase m-0 mt-4">{{ __('Envíar link') }}</button>
                     </form>
                 </div>
-                <div class="modal-footer border-0">
-                    <button type="submit" class="w-100 btn btn-primary size-20 text-uppercase">{{ __('Envíar link') }}</button>
-                </div>
+
                 <div>
                     <a href="{{ route('home') }}"
                     class="size-24 w-100 btn-link text-white text-center d-block pt-3 pb-3">{{ __('Iniciar sesión') }}</a>

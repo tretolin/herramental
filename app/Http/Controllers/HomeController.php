@@ -29,8 +29,14 @@ class HomeController extends Controller
         }
         return view('auth.login');
     }
+
     public function index()
     {
         return view('home');
+    }
+
+    public function test()
+    {
+        return view('welcome');
     }
 }

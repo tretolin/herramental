@@ -27,8 +27,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
 
-                    <button class="navbar-toggler border-0 font-weight-bold"
-                    type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <button class="item-contact-mobile show-contact navbar-toggler border-0 font-weight-bold" type="button">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -36,7 +35,7 @@
                         <img width="100" src="{{ asset('images/rentracker-logo.png') }}" />
                     </a>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse d-none d-md-block" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
                             <a class="navbar-brand p-0 d-none d-md-block float-right"href="{{ url('/') }}">
@@ -51,9 +50,14 @@
                                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
                             @else
-                                    <a class="link-green" href="#">
+                                    <a class="link-green item-contact" href="#">
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
+                                    <div class="contact-info text-blue shadow p-2 px-3 pt-3 pb-4 size-16 c-pointer" style="display: none">
+                                        <div>Contacto:</div>
+                                        <div class="font-weight-bold d-block">Ramiro A. Elizondo</div>
+                                        <div class="font-weight-bold d-block">relizondo@herramental.com</div>
+                                    </div>
 
                                     <a class="link-green" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
@@ -69,6 +73,20 @@
                     </div>
                 </div>
             </nav>
+
+            
+            <div class="contact-info-mobile left-side text-blue shadow p-4 size-16 c-pointer" style="display: none">
+                        <div class="c-pointer font-weight-bold mb-4">Realizar pago</div>
+                        <div>Contacto:</div>
+                        <div class="font-weight-bold d-block">Ramiro A. Elizondo</div>
+                        <div class="font-weight-bold d-block mb-4">relizondo@herramental.com</div>
+                        <div class="mt-2">
+                            <a class="link-green d-inline" href="{{ route('logout') }}">
+                                <i class="icon material-icons">exit_to_app</i>
+                            </a>
+                            <a class="link-green d-inline"style="vertical-align: 6px" href="{{ route('logout') }}">Salir</a>
+                        </div>
+                    </div>
 
             <main class="py-4">
                 @yield('content')

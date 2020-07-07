@@ -16,3 +16,5 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix.js('resources/js/doughnut.js', 'public/js')
     .sass('resources/sass/chart.scss', 'public/css');
+
+mix.js('resources/js/welcome.js', 'public/js')

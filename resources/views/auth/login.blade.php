@@ -15,7 +15,7 @@
                 <div class="modal-body">
                     <form id="login-form">
                         <input id="email" type="email" class="form-control mb-4 @error('email') is-invalid @enderror" value="luis@herramental.com"
-                            placeholder="Correo" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            placeholder="Correo" name="username" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
                                 <span class="invalid-feedback" role="alert">

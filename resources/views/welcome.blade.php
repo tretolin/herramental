@@ -32,10 +32,10 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+
+                    <button type="submit" class="w-100 btn btn-primary text-uppercase m-0 mt-2">{{ __('Iniciar sesión') }}</button>
+
                     </form>
-                </div>
-                <div class="modal-footer border-0">
-                    <button type="submit" class="w-100 btn btn-primary text-uppercase">{{ __('Iniciar sesión') }}</button>
                 </div>
                 <div>
                     <a href="{{ route('password.request') }}"

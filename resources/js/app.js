@@ -41,7 +41,7 @@ $(document).ready(function () {
     $(window).resize(function () {
         var h = $(window).height();
         var w = $(window).width();
-        $('.modal-content').css({
+        $('.modal-content',$('#detail-modal')).css({
             width: w,
             height: h
         })
@@ -55,10 +55,25 @@ $(document).ready(function () {
         var resize = setInterval(function () {
             $(window).resize();
             if (rest-- < 1) {
-                clearInterval(reset);
+                clearInterval(resize);
             }
         }, 100);
     });
+
+    var contactInfo = function (button, el) {
+        var contactInfo = $(el);
+        if (contactInfo) {
+            $(button).click(function () {
+                contactInfo.css('display') != 'none' ? contactInfo.fadeOut() : contactInfo.fadeIn();
+            });
+            contactInfo.click(function () {
+                contactInfo.fadeOut();
+            });
+        }
+    }
+
+    contactInfo('.item-contact', '.contact-info');
+    contactInfo('.item-contact-mobile', '.contact-info-mobile');
 
     $(window).resize();
 })

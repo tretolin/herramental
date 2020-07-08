@@ -2,7 +2,7 @@
 
 @section('content')
 <div style="background-color: black">
-    <div class="modal-bg-dark"></div>
+    <div class="modal-bg-dark" style="background-image:url('{{ asset('images/rt-bg.jpg') }}')"></div>
     <div class="row justify-content-center">
         <!-- Modal -->
         <div class="modal show d-block" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -13,10 +13,9 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+                    <form id="login-form">
                         <input id="email" type="email" class="form-control mb-4 @error('email') is-invalid @enderror" value="luis@herramental.com"
-                            placeholder="Correo" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            placeholder="Correo" name="username" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -34,12 +33,11 @@
                             @enderror
 
                             <button type="submit" class="w-100 btn btn-primary size-20 text-uppercase btn-center">{{ __('Iniciar sesión') }}</button>
-                <div>
                     </form>
                 </div>
 
                     <a href="{{ route('password.request') }}"
-                    class="size-24 w-100 btn-link text-white text-center d-block pt-3 pb-3">{{ __('Olvidé mi contraseña') }}a</a>
+                    class="size-24 w-100 btn-link text-white text-center d-block pt-3 pb-3">{{ __('Olvidé mi contraseña') }}</a>
                 </div>
             </div>
         </div>

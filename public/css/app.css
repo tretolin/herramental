@@ -1,5 +1,131 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+.wrap {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  left: 0;
+  margin: 0 auto;
+}
+
+/* select starting stylings ------------------------------*/
+
+.select {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  position: relative;
+}
+
+.select-text {
+  position: relative;
+  font-family: inherit;
+  background-color: #f7f7f7;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* Remove focus */
+
+.select-text:focus {
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+/* Use custom arrow */
+
+.select .select-text {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+}
+
+.select:after {
+  position: absolute;
+  padding: 4px;
+  top: 18px;
+  right: 10px;
+  /* Styling the down arrow */
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: "";
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+
+/* LABEL ======================================= */
+
+.select-label {
+  color: rgba(0, 0, 0, 0.26);
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+
+/* active state */
+
+.select-text:focus ~ .select-label,
+.select-text:valid ~ .select-label {
+  color: #333;
+  top: -20px;
+  transition: 0.2s ease all;
+  font-size: 14px;
+}
+
+/* BOTTOM BARS ================================= */
+
+.select-bar {
+  position: relative;
+  display: block;
+}
+
+.select-bar:before,
+.select-bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #333;
+  transition: 0.2s ease all;
+}
+
+.select-bar:before {
+  left: 50%;
+}
+
+.select-bar:after {
+  right: 50%;
+}
+
+/* active state */
+
+.select-text:focus ~ .select-bar:before,
+.select-text:focus ~ .select-bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+
+.select-highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -10929,17 +11055,15 @@ a.text-dark:focus {
 }
 
 .modal-bg-dark {
-  background-image: url("http://www.hdfondos.org/file/26071/1920x1200/crop/plant-factory-background.jpg");
-  background-size: left center;
+  background-size: cover;
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0.15;
 }
 
 :root {
   --primary: #00702c;
-  --secondary: #6c757d;
+  --secondary: #34569e;
 }
 
 .modal-dark {
@@ -10957,19 +11081,79 @@ a.text-dark:focus {
   padding: 0 45px;
 }
 
+.block-content {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 12px -4px #bfbfbf;
+}
+
+.contact-info {
+  width: 300px;
+  position: absolute;
+  right: 30px;
+  top: 60px;
+  border-radius: 3px;
+  z-index: 100;
+  background-color: white;
+}
+
+.contact-info.left-side {
+  left: 0px;
+}
+
+.contact-info-mobile {
+  width: 300px;
+  position: absolute;
+  right: 30px;
+  top: 60px;
+  border-radius: 3px;
+  z-index: 100;
+  background-color: white;
+}
+
+.contact-info-mobile.left-side {
+  left: 0px;
+}
+
+.text-blue {
+  color: #34569e;
+}
+
 .btn {
   border-radius: 6px !important;
 }
 
 .btn.btn-primary {
   font-family: Arial;
-  font-size: 20px;
   font-weight: bold;
   background-color: #00702c !important;
 }
 
 .btn.btn-primary:not([disabled]):not(.disabled):active {
-  background-color: #000a04 !important;
+  background-color: #005c24 !important;
+}
+
+.circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.border-green {
+  border-color: #00702c;
+}
+
+.border-blue {
+  border-color: #34569e;
+}
+
+.border-orange {
+  border-color: #ff8373;
+}
+
+.border-yellow {
+  border-color: #ffda83;
 }
 
 form input.form-control {
@@ -10981,15 +11165,120 @@ form .btn-center {
   margin: 0px auto;
 }
 
-a {
+a.link-green {
   color: #00702c;
 }
 
-a:hover {
-  color: #000a04;
+a.link-green:hover {
+  color: #005c24;
+}
+
+a.link-blue {
+  color: #34569e;
+}
+
+a.link-blue:hover {
+  color: #34569e;
+}
+
+a.link-dark {
+  color: black;
+}
+
+a.link-dark:hover {
+  color: #000;
+}
+
+.size-10 {
+  font-size: 10px;
+}
+
+.size-12 {
+  font-size: 12px;
+}
+
+.size-14 {
+  font-size: 14px;
+}
+
+.size-16 {
+  font-size: 16px;
+}
+
+.size-18 {
+  font-size: 18px;
 }
 
 .size-24 {
   font-size: 24px;
+}
+
+.line-height-20 {
+  line-height: 20px;
+}
+
+.index-10 {
+  z-index: 10;
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
+.ad-h {
+  height: 140px;
+}
+
+.ad-vertical {
+  height: 500px;
+}
+
+canvas.chart {
+  cursor: pointer;
+}
+
+.detail-charge {
+  position: absolute;
+  background-color: #f8fafc;
+}
+
+.detail-charge table thead th {
+  border: 0;
+  padding: 10px 0px 10px 0;
+}
+
+.float-tooltip {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  background-color: #f8fafc;
+}
+
+.tooltip-el {
+  transition: all 0.3s ease;
+}
+
+.tooltip-frame {
+  margin: auto;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: #f8fafc;
+  display: block;
+  transform: rotate(45deg);
+  z-index: 150;
+  bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  canvas.chart {
+    height: 250px !important;
+    width: 250px !important;
+  }
+
+  .detail-charge {
+    opacity: 0;
+    bottom: 4000px;
+  }
 }
 

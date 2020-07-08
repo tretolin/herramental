@@ -157,7 +157,7 @@
                         <div class="font-weight-bold size-24">$1,650.00</div>
                         <div class="d-block">Pagar antes de: 12/12/20</div>
                         <div class="d-block">
-                            <a class="font-italic link-blue" href="#">Ver recibo</a>
+                            <!-- <a class="font-italic link-blue" href="#">Ver recibo</a> -->
                         </div>
                     </div>
                     <div class="block-content size-18 mt-2 d-none d-md-block">

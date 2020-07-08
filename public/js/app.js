@@ -49689,6 +49689,65 @@ var app = new Vue({
 });
 $(document).ready(function () {
   _doughnut__WEBPACK_IMPORTED_MODULE_0__["default"].doughnut();
+  $('.chart').click(function () {
+    if ($('.tooltip-el').eq(0).hasClass('d-block')) {
+      $('.tooltip-el').removeClass('d-block');
+      $('.tooltip-el').addClass('d-none');
+    } else {
+      $('.tooltip-el').addClass('d-block');
+      $('.tooltip-el').removeClass('d-none');
+    }
+  });
+  $('.rent-item').click(function () {
+    $(window).resize();
+
+    if ($('.detail-charge').eq(0).css('display') == 'none') {
+      $('.detail-charge').fadeIn();
+    } else {
+      $('.detail-charge').fadeOut(function () {
+        $('.detail-charge').fadeIn();
+      });
+    }
+  });
+  $('.close-detail').click(function () {
+    $('.detail-charge').fadeOut();
+  });
+  $(window).resize(function () {
+    var h = $(window).height();
+    var w = $(window).width();
+    $('.modal-content', $('#detail-modal')).css({
+      width: w,
+      height: h
+    }); // console.log('res', wHeight)
+    // $('.full-detail').css('height', wHeight);
+  });
+  $('#detail-modal').on('show.bs.modal', function () {
+    var rest = 10;
+    var resize = setInterval(function () {
+      $(window).resize();
+
+      if (rest-- < 1) {
+        clearInterval(resize);
+      }
+    }, 100);
+  });
+
+  var contactInfo = function contactInfo(button, el) {
+    var contactInfo = $(el);
+
+    if (contactInfo) {
+      $(button).click(function () {
+        contactInfo.css('display') != 'none' ? contactInfo.fadeOut() : contactInfo.fadeIn();
+      });
+      contactInfo.click(function () {
+        contactInfo.fadeOut();
+      });
+    }
+  };
+
+  contactInfo('.item-contact', '.contact-info');
+  contactInfo('.item-contact-mobile', '.contact-info-mobile');
+  $(window).resize();
 });
 
 /***/ }),
@@ -49818,9 +49877,10 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "doughnut", function() { return doughnut; });
 function doughnut() {
-  var ctx = document.getElementById('chart').getContext('2d');
+  var el = document.getElementById('chart');
 
-  if (ctx) {
+  if (el) {
+    var ctx = el.getContext('2d');
     var chart = new Chart(ctx, {
       type: 'doughnut',
       data: {
@@ -49840,7 +49900,32 @@ function doughnut() {
           //         beginAtZero: true
           //     }
           // }]
-        }
+        },
+        events: ['hover']
+      }
+    }); // Texto interior
+
+    Chart.pluginService.register({
+      beforeDraw: function beforeDraw(chart) {
+        var width = chart.chart.width,
+            height = chart.chart.height,
+            ctx = chart.chart.ctx;
+        ctx.restore();
+        var fontSize = (height / 184).toFixed(2);
+        ctx.font = fontSize + "em sans-serif";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = '#34569e';
+        var text = "$1,605.00",
+            textX = Math.round((width - ctx.measureText(text).width) / 2),
+            textY = height / 2;
+        ctx.fillText(text, textX, textY);
+        var fontSize = (height / 224).toFixed(2);
+        ctx.font = fontSize + "em sans-serif";
+        var text = "Total",
+            textX = Math.round((width - ctx.measureText(text).width) / 2),
+            textY = height / 1.7;
+        ctx.fillText(text, textX, textY);
+        ctx.save();
       }
     });
   }

@@ -13,13 +13,7 @@ const api = {
             method: 'POST',
             url: baseURL + 'user/authenticate',
             data: data,
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader('Content-Type', applicationJSON);
-            },
-            xhrFields: {
-                crossorigin: true
-            },
-            headers: { 'Content-Type': 'application/json' },
+            contentType: 'application/json',
             error: function(jqXHR) {
                 callback([]);
                 return [];
